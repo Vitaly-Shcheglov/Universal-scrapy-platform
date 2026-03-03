@@ -1,0 +1,74 @@
+[tool.poetry]
+name = "universal-scrapy-platform"
+version = "1.0.0"
+description = "Universal e-commerce scraping platform built with Scrapy & Django"
+authors = ["Vitaly Shcheglov <cgfhnfr4@gmail.com>"]
+readme = "README.md"
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+Django = "^4.2.7"
+djangorestframework = "^3.14.0"
+celery = "^5.3.4"
+redis = "^5.0.1"
+django-celery-beat = "^2.5.0"
+django-celery-results = "^2.5.1"
+requests = "^2.31.0"
+beautifulsoup4 = "^4.12.2"
+lxml = "^4.9.3"
+Pillow = "^10.1.0"
+python-decouple = "^3.8"
+psycopg2-binary = "^2.9.9"
+django-filter = "^23.3"
+drf-spectacular = "^0.26.5"
+openpyxl = "^3.1.2"
+pandas = "^2.1.3"
+user-agents = "^2.2.0"
+fake-useragent = "^1.4.0"
+Scrapy = "^2.11.0"
+scrapy-user-agents = "^0.1.1"
+itemadapter = "^0.8.0"
+scrapy-playwright = "^0.0.34"
+playwright = "^1.40.0"
+selenium = "^4.15.2"
+webdriver-manager = "^4.0.1"
+w3lib = "^2.1.2"
+parsel = "^1.8.1"
+django-cors-headers = "^4.3.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.3"
+pytest-django = "^4.7.0"
+pytest-cov = "^4.1.0"
+black = "^23.11.0"
+flake8 = "^6.1.0"
+isort = "^5.12.0"
+mypy = "^1.7.1"
+ipython = "^8.18.1"
+django-debug-toolbar = "^4.2.0"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 100
+target-version = ['py311']
+exclude = '''
+/(
+    \.git
+  | \.venv
+  | migrations
+  | __pycache__
+)/
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 100
+skip = ["migrations", ".venv"]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "product_parser.settings"
+python_files = ["tests.py", "test_*.py", "*_tests.py"]
