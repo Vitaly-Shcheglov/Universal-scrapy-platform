@@ -83,7 +83,7 @@ class Command(BaseCommand):
                 # Синхронный запуск
                 result = parse_source_task(source.id, **kwargs)
 
-                if result.get('status') == 'success':
+                if result.get("status") == 'success':
                     self.stdout.write(self.style.SUCCESS(
                         f"Успешно: новых={result['new']}, "
                         f"обновлено={result['updated']}, "
